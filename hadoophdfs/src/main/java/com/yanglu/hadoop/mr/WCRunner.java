@@ -20,6 +20,7 @@ import java.io.IOException;
  * 事前需要准备：
  * <p></p>
  * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+ *
  *  1. 本地JVM运行mapreduce程序：
  *
  *    1.1 local 本地文件的:
@@ -57,6 +58,8 @@ import java.io.IOException;
  *      需要mapred-site.xml 以及 yarn-site.xml
  *      mapred-site.xml: 告知系统由yarn进行整体资源调度管理
  *      yarn-site.xml  : 告知系统resourceManager由哪一个节点来处理
+ *      如果不使用xml，也可以用conf.set(k,v)的方式设定
+ *
  * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
  *
  *
