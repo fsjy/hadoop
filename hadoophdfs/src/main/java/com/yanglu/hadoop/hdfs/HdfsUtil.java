@@ -22,7 +22,13 @@ public class HdfsUtil {
 
         Configuration configuration = new Configuration();
 
-        // configuration.addResource("hdfs://centos01:9000");
+        // 如果不使用xml配置则在程序中进行recource的配置
+        // 如果不指定集群的uri，默认会寻找本地的file采用本地的File System
+        // 指定方法
+        // 1. 可在conf中直接指定xml
+        // configuration.addResource("core-site_.xml");
+        // 2. 在conf中进行set处理
+        configuration.set("fs.defaultFS", "hdfs://centos01:9000");
 
         FileSystem fs = FileSystem.get(configuration);
 
@@ -31,7 +37,7 @@ public class HdfsUtil {
 
         FSDataInputStream fsDataInputStream = fs.open(path);
 
-        FileOutputStream fileOutputStream = new FileOutputStream("/Users/yl/source/hadoop/wc.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("/Users/yl/source/hadoop/wc3.txt");
 
         IOUtils.copy(fsDataInputStream, fileOutputStream);
 
