@@ -65,10 +65,16 @@ public class WCRunner {
         // 导入maven：hadoop-mapreduce-client-jobclient
         // 指定父目录即可
         // 本地模式则使用本地路径
+        // FileInputFormat.setInputPaths(job, new Path("Users/xx/wordcount/input"));
+
         // 集群模式则使用集群路径
         FileInputFormat.setInputPaths(job, new Path("hdfs://centos01:9000/wordcount/input"));
 
         // 指定处理结果输出路径
+        // 本地模式则使用本地路径
+        // FileInputFormat.setOutputPath(job, new Path("Users/xx/wordcount/output2"));
+
+        // 集群模式则使用集群路径
         FileOutputFormat.setOutputPath(job, new Path("hdfs://centos01:9000/wordcount/output2"));
 
         // 将job提交给集群运行
