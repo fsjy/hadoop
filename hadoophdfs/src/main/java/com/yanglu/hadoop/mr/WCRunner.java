@@ -20,6 +20,15 @@ import java.io.IOException;
  * 事前需要准备：
  * <p></p>
  * 1. hdfs集群中建立/wordcount/input/ 文件夹，并上传文件（单个复数个都可以）
+ * 2. local 本地模式:
+ *    FileInputFormat.setInputPaths
+ *    FileInputFormat.setOutputPaths
+ *    在设置input以及output的path的场合，设置到本地目录，则会启动local model
+ *    ！！【注意】！！
+ *    maven项目在resources下不要设置core-site.xml hdfs-site.xml，否则会启动集群的configuration配置
+ *
+ * 3. remote 集群模式：
+ *    设置为集群路径即可
  *
  * @author Dacular
  */
@@ -55,10 +64,12 @@ public class WCRunner {
         // 使用：org.apache.hadoop.mapreduce.lib.input。此版为新版本
         // 导入maven：hadoop-mapreduce-client-jobclient
         // 指定父目录即可
-        FileInputFormat.setInputPaths(job, new Path("/wordcount/input/"));
+        // 本地模式则使用本地路径
+        // 集群模式则使用集群路径
+        FileInputFormat.setInputPaths(job, new Path("hdfs://centos01:9000/wordcount/input"));
 
         // 指定处理结果输出路径
-        FileOutputFormat.setOutputPath(job, new Path("/wordcount/output/"));
+        FileOutputFormat.setOutputPath(job, new Path("hdfs://centos01:9000/wordcount/output2"));
 
         // 将job提交给集群运行
         job.waitForCompletion(true);
