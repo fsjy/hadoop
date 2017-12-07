@@ -16,11 +16,6 @@ public class FlowSortRunner {
 
         Configuration configuration = new Configuration();
 
-        // configuration.set("fs.defaultFS", "hdfs://centos01:9000");
-        //configuration.set("fs.defaultFS", "hdfs://centos01:9000");
-        //configuration.set("mapreduce.job.jar", "/Users/yl/.m2/repository/com/yanglu/hadoop-hdfs/1.0-SNAPSHOT/hadoop-hdfs-1.0-SNAPSHOT.jar");
-
-
         Job job = Job.getInstance(configuration);
 
         job.setJarByClass(FlowSortRunner.class);
