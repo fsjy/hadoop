@@ -1,6 +1,6 @@
 package com.yanglu.hadoop.mr.flow;
 
-import com.yanglu.hadoop.mr.flow.untity.FlowBean;
+import com.yanglu.hadoop.mr.flow.FlowBean;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 

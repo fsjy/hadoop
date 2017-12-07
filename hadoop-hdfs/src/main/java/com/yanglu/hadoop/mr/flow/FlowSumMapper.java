@@ -1,6 +1,6 @@
 package com.yanglu.hadoop.mr.flow;
 
-import com.yanglu.hadoop.mr.flow.untity.FlowBean;
+import com.yanglu.hadoop.mr.flow.FlowBean;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

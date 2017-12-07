@@ -1,6 +1,6 @@
 package com.yanglu.hadoop.mr.flow;
 
-import com.yanglu.hadoop.mr.flow.untity.FlowBean;
+import com.yanglu.hadoop.mr.flow.FlowBean;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
